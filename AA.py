@@ -2,10 +2,7 @@ import imutils
 import cv2
 
 from os import path
-from sys import stdin
-input_file = f"{path.dirname(path.abspath(__file__))}\\input.txt"
-stdin = open(input_file, "rt")
-input = stdin.readline
+input_file = f"{path.dirname(path.abspath(__file__))}\\images\\people_walking.jpg"
 
 # Initializing the HOG person
 # detector
@@ -13,7 +10,7 @@ hog = cv2.HOGDescriptor()
 hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 
 # Reading the Image
-image = cv2.imread('img.png')
+image = cv2.imread(input_file)
 
 # Resizing the Image
 image = imutils.resize(image,
